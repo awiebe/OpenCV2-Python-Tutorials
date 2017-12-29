@@ -144,7 +144,7 @@ OpenCV provides all these in a single function, **cv2.calcOpticalFlowPyrLK()**. 
     cap.release()
     
 
-(This code doesn't check how correct are the next keypoints. So even if any feature point disappears in image, there is a chance that optical flow finds the next point which may look close to it. So actually for a robust tracking, corner points should be detected in particular intervals. OpenCV samples comes up with such a sample which finds the feature points at every 5 frames. It also run a backward-check of the optical flow points got to select only good ones. Check ``samples/python2/lk_track.py``).
+(This code doesn't check how correct the next keypoints are, so even if any feature point disappears from view, there is a chance that optical flow finds the next point which may look close to it. So for an actually robust tracking, corner points should be detected only in a nearby area. The OpenCV sample code ``samples/python2/lk_track.py`` comes up with such a robust algorithm, which finds the feature points at every 5 frames. It also run a backward-check of the optical flow points got to select only good ones.
 
 See the results we got:
 
